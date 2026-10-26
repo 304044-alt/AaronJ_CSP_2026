@@ -15,4 +15,13 @@ if player_name is None or player_name.strip() == "":
 else:
     player_name = player_name.strip().title()[:15]
 
+# Store game data.
+score = 0
+misses = 0
+maximum_misses = 5
+game_running = True
+
+star_colors = ["gold", "orange", "hot pink"]
+stars = []
+
 screen.mainloop()
