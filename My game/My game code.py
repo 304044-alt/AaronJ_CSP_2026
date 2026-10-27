@@ -24,4 +24,13 @@ game_running = True
 star_colors = ["gold", "orange", "hot pink"]
 stars = []
 
+# Create the player-controlled basket
+basket = turtle.Turtle()
+basket.shape("square")
+basket.color("deep sky blue")
+basket.shapesize(stretch_wid=1, stretch_len=4)
+basket.penup()
+basket.goto(0, -240)
+
+
 screen.mainloop()
