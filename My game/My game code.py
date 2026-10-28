@@ -32,5 +32,11 @@ basket.shapesize(stretch_wid=1, stretch_len=4)
 basket.penup()
 basket.goto(0, -240)
 
+# Create a turtle for displaying the score
+score_writer = turtle.Turtle()
+score_writer.hideturtle()
+score_writer.penup()
+score_writer.color("white")
+score_writer.goto(0, 255)
 
 screen.mainloop()
