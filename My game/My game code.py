@@ -39,4 +39,12 @@ score_writer.penup()
 score_writer.color("white")
 score_writer.goto(0, 255)
 
+# Create a turtle for instructions and end-game messages
+message_writer = turtle.Turtle()
+message_writer.hideturtle()
+message_writer.penup()
+message_writer.color("white")
+
+
+
 screen.mainloop()
