@@ -45,6 +45,9 @@ message_writer.hideturtle()
 message_writer.penup()
 message_writer.color("white")
 
+# Define a star shape using points around its center
+star_points = [(0, 12), (3, 4), (12, 4), (5, -2), (8, -11),(0, -6), (-8, -11), (-5, -2), (-12, 4), (-3, 4)]
+screen.register_shape("falling_star", tuple(star_points))
 
 
 screen.mainloop()
