@@ -50,4 +50,14 @@ star_points = [(0, 12), (3, 4), (12, 4), (5, -2), (8, -11),(0, -6), (-8, -11), (
 screen.register_shape("falling_star", tuple(star_points))
 
 
+#Define all game functions
+def update_score():
+    """Build and display the current score string."""
+    score_writer.clear()
+
+    score_text = (player_name + " | Score: " + str(score) + " | Misses: " + str(misses) + "/" + str(maximum_misses))
+
+    score_writer.write(score_text,align="center",font=("Arial", 14, "normal"))
+
+
 screen.mainloop()
