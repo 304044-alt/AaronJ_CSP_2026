@@ -71,5 +71,11 @@ def move_basket(distance):
         new_x = max(-250, min(250, new_x))
         basket.setx(new_x)
 
+def move_left():
+    move_basket(-30)
+
+
+def move_right():
+    move_basket(30)
 
 screen.mainloop()
