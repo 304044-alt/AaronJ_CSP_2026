@@ -52,12 +52,19 @@ screen.register_shape("falling_star", tuple(star_points))
 
 #Define all game functions
 def update_score():
-    """Build and display the current score string."""
     score_writer.clear()
 
     score_text = (player_name + " | Score: " + str(score) + " | Misses: " + str(misses) + "/" + str(maximum_misses))
 
     score_writer.write(score_text,align="center",font=("Arial", 14, "normal"))
+
+def reset_star(star):
+    star.goto(random.randint(-270, 270), random.randint(310, 550))
+
+    color_index = random.randint(0, len(star_colors) - 1)
+    star.color(star_colors[color_index])
+
+
 
 
 screen.mainloop()
