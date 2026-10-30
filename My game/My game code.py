@@ -141,4 +141,18 @@ for star_number in range(3):
     stars.append(new_star)
     reset_star(new_star)
 
+# Display the controls
+message_writer.goto(0, -280)
+message_writer.write("LEFT / RIGHT: Move | Catch stars | Five misses ends the game",align="center",font=("Arial", 10, "normal"))
+
+# Connect keyboard events to their functions
+screen.onkeypress(move_left, "Left")
+screen.onkeypress(move_right, "Right")
+screen.onkeypress(restart_game, "space")
+screen.listen()
+
+# Start the game
+update_score()
+update_game()
+
 screen.mainloop()
