@@ -102,7 +102,6 @@ def restart_game():
         update_score()
 
 def update_game():
-    """Move stars, check catches, and check missed stars."""
     global score, misses, game_running
 
     if game_running:
@@ -132,5 +131,14 @@ def update_game():
 
     screen.update()
     screen.ontimer(update_game, 30)
+
+# Create three stars and store them in a list
+for star_number in range(3):
+    new_star = turtle.Turtle()
+    new_star.shape("falling_star")
+    new_star.penup()
+
+    stars.append(new_star)
+    reset_star(new_star)
 
 screen.mainloop()
