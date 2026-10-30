@@ -86,5 +86,20 @@ def show_game_over():
     message_writer.write(
         final_message,align="center",font=("Arial", 20, "bold"))
 
+def restart_game():
+    global score, misses, game_running
+
+    if not game_running:
+        score = 0
+        misses = 0
+        basket.goto(0, -240)
+        message_writer.clear()
+
+        for star in stars:
+            reset_star(star)
+
+        game_running = True
+        update_score()
+
 
 screen.mainloop()
