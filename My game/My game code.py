@@ -65,7 +65,6 @@ def reset_star(star):
     star.color(star_colors[color_index])
 
 def move_basket(distance):
-    """Move the basket without allowing it to leave the screen."""
     if game_running:
         new_x = basket.xcor() + distance
         new_x = max(-250, min(250, new_x))
@@ -77,5 +76,15 @@ def move_left():
 
 def move_right():
     move_basket(30)
+
+def show_game_over():
+    message_writer.clear()
+    message_writer.goto(0, 20)
+
+    final_message = ("GAME OVER\n Your final score: " + str(score) + "\nPress SPACE to restart")
+
+    message_writer.write(
+        final_message,align="center",font=("Arial", 20, "bold"))
+
 
 screen.mainloop()
