@@ -64,7 +64,12 @@ def reset_star(star):
     color_index = random.randint(0, len(star_colors) - 1)
     star.color(star_colors[color_index])
 
-
+def move_basket(distance):
+    """Move the basket without allowing it to leave the screen."""
+    if game_running:
+        new_x = basket.xcor() + distance
+        new_x = max(-250, min(250, new_x))
+        basket.setx(new_x)
 
 
 screen.mainloop()
