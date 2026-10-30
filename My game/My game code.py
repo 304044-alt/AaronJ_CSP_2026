@@ -101,5 +101,36 @@ def restart_game():
         game_running = True
         update_score()
 
+def update_game():
+    """Move stars, check catches, and check missed stars."""
+    global score, misses, game_running
+
+    if game_running:
+        falling_speed = 5 + min(score // 5, 4)
+
+        for star in stars:
+            old_y = star.ycor()
+            star.sety(old_y - falling_speed)
+
+            crosses_basket = (old_y >= basket.ycor() and star.ycor() <= basket.ycor())
+            within_basket = abs(star.xcor() - basket.xcor()) <= 45
+
+            if crosses_basket and within_basket:
+                score += 1
+                reset_star(star)
+                update_score()
+
+            elif star.ycor() < -290:
+                misses += 1
+                reset_star(star)
+                update_score()
+
+                if misses >= maximum_misses:
+                    game_running = False
+                    show_game_over()
+                    break
+
+    screen.update()
+    screen.ontimer(update_game, 30)
 
 screen.mainloop()
